@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { useThing } from 'react';
 import './Component.css';
 
+
+/** */
 function Component() {
   return (
     <div className="Component">
