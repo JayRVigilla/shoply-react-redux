@@ -32,13 +32,13 @@ cart
 
     
 **Step 1**
-Make a page that displays these items in a single list, each with an “add to cart” and “remove from cart” button.
+~~Make a page that displays these items in a single list, each with an “add to cart” and “remove from cart” button.~~
 
 Allow users to add and remove products to the cart.
 
 You should display the total of all items in the cart as users add and remove items from the cart. Note that users should be able to add more than one of the same product to their cart!
 
-You should be storing the cart state in Redux as well as the complete product inventory (to do this, you should import the JSON file into your rootReducer file). At a minimum, make sure your state object these two keys in it!
+~~You should be storing the cart state in Redux as well as the complete product inventory (to do this, you should import the JSON file into your rootReducer file). At a minimum, make sure your state object these two keys in it!~~
 
 Make sure your action creators and reducers have tests before moving on!
 

@@ -1,13 +1,12 @@
-import {ADD_CART, REMOVE_CART} from "./actionTypes"
+import {ADD_TO_CART, REMOVE_FROM_CART} from "./actionTypes"
 
-export function addCart(){
+export function addToCart(){
   return{
-    type: ADD_CART
+    type: ADD_TO_CART
   };
 }
-
-export function removeCart(){
+export function removeFromCart(){
   return{
-    type: REMOVE_CART
+    type: REMOVE_FROM_CART
   };
 }

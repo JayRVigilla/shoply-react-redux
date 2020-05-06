@@ -1,15 +1,23 @@
 import React from 'react';
 import './ProductCard.css';
+import {useDispatch} from "react-redux";
+import {addToCart, removeFromCart} from "./actions"
 
 
 /** */
-function ProductCard({ name, AddCart, RemoveCart }) {
+function ProductCard({id, name}) {
+const dispatch = useDispatch(); // takes action with type key
+
+
+function add(evt) {dispatch(addToCart(id));}
+function remove(evt) {dispatch(removeFromCart(id));}
+
   return (
-    <div className="ProductCard">
+    <li className="ProductCard">
       <h6>{name}</h6>
-      <button onclick={AddCart}></button>
-      <button onclick={RemoveCart}></button>
-    </div>
+      <button onClick={add()}>+</button>
+      <button onClick={remove()}>-</button>
+    </li>
   );
 }
 
