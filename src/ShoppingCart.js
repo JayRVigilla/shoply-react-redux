@@ -7,8 +7,19 @@ import './ShoppingCart.css';
 /** */
 function ShoppingCart() {
   const [discountCode, setDiscountCode] = useState("");
+  const { cartItems, inventory } = useSelector(store => store, shallowEqual)
 
-  // const cart = useSelector(state => state.cartContents, shallowEqual)
+  // const cartRows = () => {
+  //   Object.keys(cartItems).map(id => (
+  //     <tr>
+  //       <td>{inventory[id].name}</td>
+  //       <td></td>
+  //       <td>{[id]}</td>
+  //       <td></td>
+  //       <td></td>
+  //     </tr>))
+
+  // }
 
   //create "cart rows" that dynamically makes this from "cart"?
 
@@ -36,7 +47,7 @@ function ShoppingCart() {
           </tr>
         </thead>
         <tbody>
-
+          {/* {cartRows()} */}
         </tbody>
         {// dynamically add table rows from cart above?}
         }</table>
