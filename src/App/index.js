@@ -5,12 +5,9 @@ import Routes from "../Routes";
 
 function App() {
   return (
-    <div className="Home">
+    <div className="App">
       <Navigation />
-      <div>
-        <h1>Welcome to Shoply!</h1>
-        <h5>We take care of some of your shopping needs! </h5>
-        <h5>¯\_( ͠° ͟ʖ °͠ )_/¯</h5>
+      <div className="routes">
         < Routes />
       </div>
     </div>

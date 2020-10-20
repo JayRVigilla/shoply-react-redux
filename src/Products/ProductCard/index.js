@@ -6,7 +6,7 @@ import {addToCart, removeFromCart} from "../../actions/actions";
 
 
 /** */
-function ProductCard({id, name}) {
+function ProductCard({id, name, description, image_url}) {
 const dispatch = useDispatch(); // takes action with type key
 
 function add(evt) {
@@ -18,9 +18,15 @@ function remove(evt) {
 
   return (
     <div className="ProductCard">
-      <h6><Link to={`/products/${id}`}>{name}</Link></h6>
+      <Link to={`/products/${id}`}>
+        <img src={`${image_url}`} alt={`${description}`}/>
+        <h6>{name}</h6>
+      </Link>
+
+    <div>
       <button onClick={add}>+</button>
       <button onClick={remove}>-</button>
+    </div>
     </div>
   );
 }

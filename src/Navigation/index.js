@@ -6,11 +6,13 @@ import './Navigation.css';
 /** */
 function Navigation() {
   return (
-    <ul className="Navigation">
-      <li><Link to="/">Shoply</Link></li>
-      <p> Count of Items and Total Go Here</p>
-      <li><Link to="/cart">Cart</Link></li>
-    </ul>
+    <div className="Navigation">
+      <Link to="/">Shoply</Link>
+      <div className="cart icon">
+        <p> Count of Items and Total Go Here</p>
+        <Link to="/cart"><i class="fas fa-shopping-cart">Cart</i></Link>
+      </div>
+    </div>
   );
 }
 

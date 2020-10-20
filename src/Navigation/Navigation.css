@@ -1,0 +1,9 @@
+.Navigation{
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.cart.icon{
+  display: flex;
+}

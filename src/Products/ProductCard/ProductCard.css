@@ -1,0 +1,21 @@
+.ProductCard{
+  width: 25%;
+  padding: .5em;
+  margin: .5em;
+  max-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+
+img{
+  max-width: 50%;
+  max-height: 50%;
+}
+
+a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
