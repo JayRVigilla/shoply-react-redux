@@ -1,5 +1,5 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
-import data from "./data.json";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/actionTypes";
+import data from "../data.json";
 
 
 const INITIAL_STATE = {
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 };
 
 
-function rootReducer(state = INITIAL_STATE, action) {
+function reducer(state = INITIAL_STATE, action) {
   // const cartCopy = { ...state.cartContents };
 
   switch (action.type) {
@@ -37,4 +37,4 @@ function rootReducer(state = INITIAL_STATE, action) {
   }
 }
 
-export default rootReducer;
+export default reducer;

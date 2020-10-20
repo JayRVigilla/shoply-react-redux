@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
-import ShoppingCart from "./ShoppingCart";
-import ProductDetail from "./ProductDetail";
-import ProductList from './ProductList';
+import ShoppingCart from "./ShoppingCart/";
+import ProductDetail from "./Products/ProductDetail";
+import ProductList from './Products/ProductList/';
 
 
 /** */

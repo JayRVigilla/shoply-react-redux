@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Navigation from "./Navigation";
-import Routes from "./Routes";
+import Navigation from "../Navigation/";
+import Routes from "../Routes";
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import './ProductCard.css';
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
-import {addToCart, removeFromCart} from "./actions";
+import {addToCart, removeFromCart} from "../../actions/actions";
 
 
 /** */
