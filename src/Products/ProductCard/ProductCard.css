@@ -2,9 +2,9 @@
   width: 25%;
   padding: .5em;
   margin: .5em;
-  max-height: 40vh;
+  max-height: 35vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   background-color: aliceblue;
 }
@@ -12,6 +12,7 @@
 img{
   max-width: 50%;
   max-height: 50%;
+  margin: auto;
 }
 
 a{

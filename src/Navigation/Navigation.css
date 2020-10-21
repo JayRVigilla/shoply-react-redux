@@ -1,7 +1,7 @@
 .Navigation{
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: .5em;
   background-color: #2a75bb;
 }
 

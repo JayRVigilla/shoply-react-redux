@@ -9,10 +9,10 @@ import {addToCart, removeFromCart} from "../../actions/actions";
 function ProductCard({id, name, description, image_url}) {
 const dispatch = useDispatch(); // takes action with type key
 
-function add(evt) {
+  function add(evt) {
   dispatch(addToCart(id));
 }
-function remove(evt) {
+  function remove(evt) {
   dispatch(removeFromCart(id));
 }
 
@@ -23,10 +23,11 @@ function remove(evt) {
         <h6>{name}</h6>
       </Link>
 
-    <div>
-      <button onClick={add}>+</button>
-      <button onClick={remove}>-</button>
-    </div>
+      <div className="cart-buttons">
+          <i class="fas fa-plus-square" onClick={add}></i>
+          <i class="fas fa-minus-square" onClick={remove}></i>
+      </div>
+
     </div>
   );
 }
