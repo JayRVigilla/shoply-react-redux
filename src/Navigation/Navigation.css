@@ -1,10 +1,17 @@
 .Navigation{
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding: .5em;
   background-color: #2a75bb;
 }
 
 .cart.icon{
   display: flex;
+  flex-direction: row;
+}
+
+.logo{
+  flex-direction: row;
+  justify-content: space-between;
 }

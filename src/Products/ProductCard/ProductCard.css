@@ -1,3 +1,14 @@
+.ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.ProductList{
+  /* margin: 0 14%; */
+  padding: 0 10%;
+  justify-content: space-around;
+}
+
 .ProductCard{
   width: 25%;
   padding: .5em;

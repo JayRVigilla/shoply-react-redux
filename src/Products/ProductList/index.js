@@ -14,7 +14,7 @@ function ProductList() {
   return (
     <div className="ProductList">
         {productIDs.map(id =>( //key should be each key from store.inventory AKA products
-          <ProductCard
+            <ProductCard
             key={id}
             name={products[id].name}
             id={id}

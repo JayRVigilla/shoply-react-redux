@@ -8,11 +8,11 @@ import axios from 'axios'
 
 const INITIAL_STATE = {
   cartContents: {}, // {product: count,...}
-  mons: []
+  mons: [],
+  inventory: data.products
 };
 
 const BASE_API = 'https://pokeapi.co/api/v2/pokemon/'
-
 
 function reducer(state = INITIAL_STATE, action) {
   // const cartCopy = { ...state.cartContents };

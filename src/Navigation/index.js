@@ -9,18 +9,19 @@ import PokeShopLogo from '../images/PokeShopLogo.svg';
 function Navigation() {
   const cartContents = useSelector(store => store.cartContents, shallowEqual);
 
-  
+
 
   return (
     <div className="Navigation">
-      <Link to="/">
-        <img src={PokeShopLogo} alt="" />
+      <Link to="/" className="logo">
+        <img src={PokeShopLogo} alt="pokeball" />
         PokeShop
       </Link>
 
       <div className="cart icon">
-        <p> Count of Items and Total Go Here</p>
-        <Link to="/cart"><i class="fas fa-shopping-cart">Cart</i></Link>
+        <span>
+          <Link to="/cart"><i class="fas fa-shopping-cart">Cart(#)</i></Link>
+        </span>
       </div>
     </div>
   );
