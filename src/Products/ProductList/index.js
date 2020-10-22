@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import getAllPokemonAPI from './../../actions/actionCreators';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+// import getAllPokemonAPI from './../../actions/actionCreators';
 import './ProductList.css';
 import ProductCard from '../ProductCard';
 
 /** */
 function ProductList() {
-  //shallow equal: comparisons on OBJ (like state.inventory) are ===, therefore always flase
-  const products = useSelector(store => store.inventory, shallowEqual);
-  const productIDs = Object.keys(products);
+  //shallow equal: comparisons on OBJ (like state.inventory) are ===, therefore always false
+  // const products = useSelector(store => store.inventory, shallowEqual);
+  // const productIDs = Object.keys(products);
   // const mons = useSelector(store => store.mons, shallowEqual);
 
   // for pokeAPI
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(true);
+  // const dispatch = useDispatch();
+  // const [isLoading, setIsLoading] = useState(true);
   const image_url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon'  // + idNumber.png
 
-  useEffect(function () {
-    async function fetchMons() {
-      await dispatch(getAllPokemonAPI());
-      setIsLoading(false);
-    }
-    if (isLoading) fetchMons();
-  }, [dispatch, isLoading])
+  // useEffect(function () {
+  //   async function fetchMons() {
+  //     await dispatch(getAllPokemonAPI());
+  //     setIsLoading(false);
+  //   }
+  //   if (isLoading) fetchMons();
+  // }, [dispatch, isLoading])
 
   const mons = useSelector(store => store.mons,);
 

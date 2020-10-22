@@ -3,12 +3,12 @@ import {
   REMOVE_FROM_CART,
   GET_ALL_POKEMON,
 } from "../actions/actionTypes";
-import data from "../data.json";
+// import data from "../data.json";
 
 const INITIAL_STATE = {
-  cartContents: {0:'initialCart'}, // {product: count,...}
+  cartContents: {}, // {product: count,...}
   mons: [],
-  inventory: data.products
+  // inventory: data.products
 };
 
 function reducer(state = INITIAL_STATE, action) {

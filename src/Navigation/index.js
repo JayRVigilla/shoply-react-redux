@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
+// import { useSelector, shallowEqual } from 'react-redux';
 import { Link } from "react-router-dom";
 import './Navigation.css';
 import PokeShopLogo from '../images/PokeShopLogo.svg';
@@ -7,9 +7,6 @@ import PokeShopLogo from '../images/PokeShopLogo.svg';
 
 /** */
 function Navigation() {
-  const cartContents = useSelector(store => store.cartContents, shallowEqual);
-
-
 
   return (
     <div className="Navigation">

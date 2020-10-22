@@ -7,15 +7,25 @@ import './ShoppingCart.css';
 /** */
 function ShoppingCart() {
   const [discountCode, setDiscountCode] = useState("");
-  const { cartItems, inventory } = useSelector(store => store.cartContents, shallowEqual)
-  const [cartTotal, setCartTotal] = useState("Calculating...");
+  // const [cartItems, setCartItems] = useState({});
+  // const [isLoading, setIsLoading] = useState(true);
+  const cartItems = useSelector(store => store.cartContents, shallowEqual)
+  const [cartTotal, setCartTotal] = useState('');
 
 // TODO: useEffect to render cart data
+// useEffect(function () {
+//   function cartContentsFromStore() {
+//     const cart = useSelector(store => store.cartContents, shallowEqual)
+//     setCartItems(cart)
+//   }
+//   if (isLoading) cartContentsFromStore();
+// }, [cartItems, isLoading])
 
+  console.log('*****\n\n Value of cartItems in ShoppingCart', cartItems, '\n\n *****')
   const cartRows = () => {
     Object.keys(cartItems).map(id => (
       <tr>
-        <td>{id.name}</td>
+        <td>{id.name}bobo</td>
         <td></td>
         <td>{[id]}</td>
         <td></td>
