@@ -7,19 +7,21 @@ import './ShoppingCart.css';
 /** */
 function ShoppingCart() {
   const [discountCode, setDiscountCode] = useState("");
-  const { cartItems, inventory } = useSelector(store => store, shallowEqual)
+  const { cartItems, inventory } = useSelector(store => store.cartContents, shallowEqual)
+  const [cartTotal, setCartTotal] = useState("Calculating...");
 
-  // const cartRows = () => {
-  //   Object.keys(cartItems).map(id => (
-  //     <tr>
-  //       <td>{inventory[id].name}</td>
-  //       <td></td>
-  //       <td>{[id]}</td>
-  //       <td></td>
-  //       <td></td>
-  //     </tr>))
+// TODO: useEffect to render cart data
 
-  // }
+  const cartRows = () => {
+    Object.keys(cartItems).map(id => (
+      <tr>
+        <td>{id.name}</td>
+        <td></td>
+        <td>{[id]}</td>
+        <td></td>
+        <td></td>
+      </tr>))
+  }
 
   //create "cart rows" that dynamically makes this from "cart"?
 
@@ -47,12 +49,12 @@ function ShoppingCart() {
           </tr>
         </thead>
         <tbody>
-          {/* {cartRows()} */}
+          {cartRows()}
         </tbody>
-        {// dynamically add table rows from cart above?}
+        {// dynamically add table rows from cart above?
         }</table>
 
-      <p>Total: $TotalPriceGoesHere</p>
+      <p>{`Total: ${cartTotal}`}</p>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="discoutCode">Discount:</label>
