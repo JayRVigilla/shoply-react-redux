@@ -18,12 +18,12 @@ export function removeFromCart(id){
   };
 }
 
-export function fetchAllPokemon(mons){
+export function fetchAllPokemon(mons) {
   return {
     type: GET_ALL_POKEMON,
     mons
-  }
-};
+  };
+}
 
 export function handleError(error) {
   return {

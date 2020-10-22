@@ -4,7 +4,6 @@ import {
   GET_ALL_POKEMON,
 } from "../actions/actionTypes";
 import data from "../data.json";
-import axios from 'axios'
 
 const INITIAL_STATE = {
   cartContents: {}, // {product: count,...}
