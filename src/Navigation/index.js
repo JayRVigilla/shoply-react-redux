@@ -20,7 +20,7 @@ function Navigation() {
 
       <div className="cart icon">
         <span>
-          <Link to="/cart"><i class="fas fa-shopping-cart">Cart(#)</i></Link>
+          <Link to="/cart"><i class="fas fa-shopping-cart">Cart(#{})</i></Link>
         </span>
       </div>
     </div>
