@@ -6,7 +6,7 @@ import {
 import data from "../data.json";
 
 const INITIAL_STATE = {
-  cartContents: {}, // {product: count,...}
+  cartContents: {0:'initialCart'}, // {product: count,...}
   mons: [],
   inventory: data.products
 };
@@ -17,10 +17,8 @@ function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     // get all pokemon
     case GET_ALL_POKEMON: {
-      const monsCopy = { ...state.mons };
-      return { ...state, mons: monsCopy, }
+      return { ...state, mons: action.mons, }
     }
-
 
     // action: type, id
     case ADD_TO_CART: {

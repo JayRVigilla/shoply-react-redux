@@ -24,36 +24,24 @@ function ProductList() {
     if (isLoading) fetchMons();
   }, [dispatch, isLoading])
 
-  const storeMons = useSelector(store => store.mons,);
-console.log('*****\n\n Value of storeMons in ProductList', storeMons, '\n\n *****')
+  const mons = useSelector(store => store.mons,);
+
   function stripID(url) {
     let p = url.split('/')
     return parseInt(p[p.length - 2]);
   }
 
+
   return (
     <div className="ProductList">
-        {productIDs.map(id =>( //key should be each key from store.inventory AKA products
-            <ProductCard
-            key={id}
-            name={products[id].name}
-            id={id}
-            image_url={products[id].image_url}
-            description={products[id].description} />
-          ))}
-
-      <div>
-        <h2>poke API</h2>
-        {/* {mons.results.map(mon =>( //key should be each key from store.inventory AKA products
-            <ProductCard
-            key={stripID(mon.url)}
-            name={mon.name}
-            id={stripID(mon.url)}
-            image_url={`${image_url}/${stripID(mon.url)}.png`}
-            description='filler description' />
-        ))} */}
-      </div>
-
+            {mons.map(mon =>( //key should be each key from store.inventory AKA products
+                <ProductCard
+                key={stripID(mon.url)}
+                name={mon.name}
+                id={stripID(mon.url)}
+                image_url={`${image_url}/${stripID(mon.url)}.png`}
+                description='filler description' />
+            ))}
     </div>
   );
 }

@@ -24,8 +24,8 @@ const dispatch = useDispatch(); // takes action with type key
       </Link>
 
       <div className="cart-buttons">
-          <i class="fas fa-plus-square" onClick={add}></i>
-          <i class="fas fa-minus-square" onClick={remove}></i>
+          <i className="fas fa-plus-square" onClick={add}></i>
+          <i className="fas fa-minus-square" onClick={remove}></i>
       </div>
 
     </div>

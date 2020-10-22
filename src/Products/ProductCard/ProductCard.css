@@ -4,16 +4,15 @@
 }
 
 .ProductList{
-  /* margin: 0 14%; */
-  padding: 0 10%;
+  padding: 0 1%;
   justify-content: space-around;
 }
 
 .ProductCard{
-  width: 25%;
+  width: 140px;
   padding: .5em;
   margin: .5em;
-  max-height: 35vh;
+  max-height: 15vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,8 +20,8 @@
 }
 
 img{
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 90%;
+  max-height: 90%;
   margin: auto;
 }
 
