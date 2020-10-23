@@ -9,8 +9,6 @@ function ProductList() {
   const products = useSelector(store => store.inventory, shallowEqual);
   const productIDs = Object.keys(products);
 
-
-
   return (
     <div className="ProductList">
         {productIDs.map(id =>( //key should be each key from store.inventory AKA products

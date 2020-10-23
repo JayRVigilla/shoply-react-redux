@@ -2,20 +2,18 @@ import React from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import { Link } from "react-router-dom";
 import './Navigation.css';
-import PokeShopLogo from '../images/PokeShopLogo.svg';
+import Logo from '../images/bunny-ears.png';
 
 
 /** */
 function Navigation() {
-  const cartContents = useSelector(store => store.cartContents, shallowEqual);
-
-  
+  const cartContents = useSelector(store => store.cartContents, shallowEqual); //obj
 
   return (
     <div className="Navigation">
-      <Link to="/">
-        <img src={PokeShopLogo} alt="" />
-        PokeShop
+      <Link to="/" className="logo link">
+        <img src={Logo} alt="floppy eared bunny"/>
+        E-Store Bunny
       </Link>
 
       <div className="cart icon">

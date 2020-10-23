@@ -1,29 +1,19 @@
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
-  GET_ALL_POKEMON,
 } from "../actions/actionTypes";
 import data from "../data.json";
 import axios from 'axios'
 
 const INITIAL_STATE = {
   cartContents: {}, // {product: count,...}
-  mons: []
+  inventory: {}
 };
-
-const BASE_API = 'https://pokeapi.co/api/v2/pokemon/'
-
 
 function reducer(state = INITIAL_STATE, action) {
   // const cartCopy = { ...state.cartContents };
 
   switch (action.type) {
-    // get all pokemon
-    case GET_ALL_POKEMON: {
-      const monsCopy = {...state.mons}
-    }
-
-
     // action: type, id
     case ADD_TO_CART: {
       const cartCopy = { ...state.cartContents };
