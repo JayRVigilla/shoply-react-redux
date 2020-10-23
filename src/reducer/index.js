@@ -3,7 +3,6 @@ import {
   REMOVE_FROM_CART,
 } from "../actions/actionTypes";
 import data from "../data.json";
-import axios from 'axios'
 
 const INITIAL_STATE = {
   cartContents: {}, // {product: count,...}

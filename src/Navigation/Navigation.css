@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: .5em;
-  background-color: #2a75bb;
+  background-color: #00cccc;
 }
 
 .cart.icon{
@@ -12,3 +12,5 @@
 .logo{
   width: 10%;
 }
+
+/* caa0ff */
