@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import './ShoppingCart.css';
 
@@ -7,20 +7,30 @@ import './ShoppingCart.css';
 /** */
 function ShoppingCart() {
   const [discountCode, setDiscountCode] = useState("");
+  const [cartItems, setCartItems] = useState({});
   const { cartContents, inventory } = useSelector(store => store, shallowEqual)
   const total = 5;
 
-  const cartRows = () => {
-    Object.keys(cartContents).map(id => (
-      <tr>
-        <td>{inventory.id.name}</td>
-        <td></td>
-        <td>{id}</td>
-        <td></td>
-        <td></td>
-      </tr>))
+  // setCartItems(cartContents);
+  console.log('*****\n\n Value of inventory in cart', inventory, '\n\n *****')
+  console.log('*****\n\n Value of cartItems in cart', cartItems, '\n\n *****')
+  useEffect(() => {
+    function updateCart(){
+      setCartItems(cartContents)
+    }
+    updateCart()
+    }, [cartContents])
 
-  }
+  const cartRows =
+    Object.keys(cartItems).map(id => (
+        <tr>
+        <td>{inventory[id].name}</td>
+        <td>{inventory[id].price}</td>
+        <td>{cartItems[id]}</td>
+        <td>{inventory[id].price * cartItems[id]}</td>
+        <td>actions?</td>
+      </tr>
+    ))
 
   //create "cart rows" that dynamically makes this from "cart"?
 
@@ -40,18 +50,17 @@ function ShoppingCart() {
       <table>
         <thead>
           <tr>
-            <th>Item Name</th>
-            <th>Item Price</th>
-            <th>Item Quantity</th>
-            <th>Item SubTotal</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>SubTotal</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {cartRows()}
+          {cartRows}
         </tbody>
-        {// dynamically add table rows from cart above?}
-        }</table>
+      </table>
 
       <p>Total: ${total}</p>
 

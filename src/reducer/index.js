@@ -5,7 +5,7 @@ import {
 import data from "../data.json";
 
 const INITIAL_STATE = {
-  cartContents: {}, // {product: count,...}
+  cartContents: {"47314fa1-ae56-4eae-80be-af6691145951": 2}, // {product: count,...}
   inventory: data.products,
 };
 
