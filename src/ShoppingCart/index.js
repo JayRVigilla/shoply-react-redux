@@ -9,11 +9,8 @@ function ShoppingCart() {
   const [discountCode, setDiscountCode] = useState("");
   const [cartItems, setCartItems] = useState({});
   const { cartContents, inventory } = useSelector(store => store, shallowEqual)
-  const total = 5;
+  const [total, setTotal] = useState(0);
 
-  // setCartItems(cartContents);
-  console.log('*****\n\n Value of inventory in cart', inventory, '\n\n *****')
-  console.log('*****\n\n Value of cartItems in cart', cartItems, '\n\n *****')
   useEffect(() => {
     function updateCart(){
       setCartItems(cartContents)
@@ -32,7 +29,11 @@ function ShoppingCart() {
       </tr>
     ))
 
-  //create "cart rows" that dynamically makes this from "cart"?
+  function calcTotal(cart) {
+    let cTotal = 0
+    //
+    setTotal(cTotal)
+  }
 
   const handleChange = evt => {
     setDiscountCode(evt.target.value);
@@ -47,7 +48,7 @@ function ShoppingCart() {
   return (
     <div className="ShoppingCart">
       <h2>Your shopping Cart</h2>
-      <table>
+      <table className="cartlist">
         <thead>
           <tr>
             <th>Name</th>
