@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const INITIAL_STATE = {
   cartContents: {}, // {product: count,...}
-  inventory: {}
+  inventory: data.products,
 };
 
 function reducer(state = INITIAL_STATE, action) {
