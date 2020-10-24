@@ -18,15 +18,18 @@ const dispatch = useDispatch(); // takes action with type key
 
   return (
     <div className="ProductCard">
-      <Link to={`/products/${id}`}>
-        <img src={`${image_url}`} alt={`${description}`}/>
-        <h6>{name}</h6>
-      </Link>
+      <div>
+        <Link to={`/products/${id}`}>
+          <img src={`${image_url}`} alt={`${description}`}/>
+          <h2>{name}</h2>
+        </Link>
+      </div>
 
       <div className="cart-buttons">
           <i class="fas fa-plus-square" onClick={add}></i>
           <i class="fas fa-minus-square" onClick={remove}></i>
       </div>
+
 
     </div>
   );

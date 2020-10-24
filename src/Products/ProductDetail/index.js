@@ -13,7 +13,7 @@ function ProductDetail() {
 
   return (
     <div className="ProductDetail">
-      <img src={`${item.price}`}
+      <img src={`${item.image_url}`}
         alt={`${item.name}`} />
       <h1>{item.name}</h1>
       <p>{item.description}</p>
