@@ -2,15 +2,23 @@
   display: flex;
   justify-content: space-between;
   padding: .5em;
-  background-color: #00cccc;
+  align-items: center;
+  /* background-color: #00cccc; */
+  background-color: #caa0ff;
 }
 
 .cart.icon{
   display: flex;
 }
 
-.logo{
-  width: 10%;
+img{
+  width: 2em;
 }
 
 /* caa0ff */
+/* 00cccc */
+.logo.link{
+  flex-direction: row;
+  font-family: 'Chango', cursive;
+  width: 25%;
+}

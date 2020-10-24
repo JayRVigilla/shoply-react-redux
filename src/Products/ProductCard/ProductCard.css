@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #caa0ff;
+  /* background-color: #caa0ff; */
+  background-color: #00cccc
 }
 
 img{
