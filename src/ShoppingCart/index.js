@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, shallowEqual } from 'react-redux';
 import './ShoppingCart.css';
+import DiscountForm from './DiscountForm'
 
 // TODO make this more components. form and invoice
 // cartContents: {undefined: 1}... so i'm not grabbing id?
 /** */
 function ShoppingCart() {
-  const [discountCode, setDiscountCode] = useState("");
+  // const [discountCode, setDiscountCode] = useState("");
   const [cartItems, setCartItems] = useState({});
   const { cartContents, inventory } = useSelector(store => store, shallowEqual)
   const [total, setTotal] = useState(0);
@@ -35,14 +36,14 @@ function ShoppingCart() {
     setTotal(cTotal)
   }
 
-  const handleChange = evt => {
-    setDiscountCode(evt.target.value);
-  };
+  // const handleChange = evt => {
+  //   setDiscountCode(evt.target.value);
+  // };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    setDiscountCode("")
-  }
+  // const handleSubmit = (evt) => {
+  //   evt.preventDefault();
+  //   setDiscountCode("")
+  // }
 
   // use state.cartContents as data
   return (
@@ -64,8 +65,8 @@ function ShoppingCart() {
       </table>
 
       <p>Total: ${total}</p>
-
-      <form onSubmit={handleSubmit}>
+      <DiscountForm />
+      {/* <form onSubmit={handleSubmit}>
         <label htmlFor="discoutCode">Discount:</label>
         <input type="text"
           name="discountCode"
@@ -74,7 +75,7 @@ function ShoppingCart() {
           onChange={handleChange}
         ></input>
         <button>Apply Discount</button>
-      </form>
+      </form> */}
 
     </div>
   );
