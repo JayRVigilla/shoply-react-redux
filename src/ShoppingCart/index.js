@@ -18,7 +18,7 @@ function ShoppingCart() {
       let cartKeys = Object.keys(cartItems)
 
       let cTotal = cartKeys.length > 0
-        ? cartKeys.reduce((a, b) => a + parseInt(subTotal(b)), 0)
+        ? cartKeys.reduce((a, b) => a + parseFloat(subTotal(b)), 0)
         : 0
 
       setTotal(cTotal)
@@ -30,10 +30,10 @@ function ShoppingCart() {
     Object.keys(cartItems).map(id => (
       <tr key={id}>
         <td>{inventory[id].name}</td>
-        <td>{inventory[id].price}</td>
+        <td>${inventory[id].price}</td>
         <td>{cartItems[id]}</td>
-        <td>{inventory[id].price * cartItems[id]}</td>
-        <td>actions?</td>
+        <td>${inventory[id].price * cartItems[id]}</td>
+        <td></td>
       </tr>
     ))
 
@@ -41,9 +41,8 @@ function ShoppingCart() {
   // use state.cartContents as data
   return (
     <div className="ShoppingCart">
-      <h2>Your shopping Cart</h2>
       <table className="cartlist">
-        <thead>
+        <caption>Your shopping Cart</caption>
           <tr>
             <th>Name</th>
             <th>Price</th>
@@ -51,7 +50,6 @@ function ShoppingCart() {
             <th>SubTotal</th>
             <th>Actions</th>
           </tr>
-        </thead>
         <tbody>
           {cartRows}
         </tbody>

@@ -1,0 +1,18 @@
+.ShoppingCart{
+padding: 4vh;
+}
+
+caption{
+  font-family: 'Chango', cursive;
+}
+
+table {
+  width: 75%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+}

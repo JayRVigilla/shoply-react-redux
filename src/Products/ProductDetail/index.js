@@ -1,17 +1,23 @@
 import React from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
+import { useParams } from 'react-router-dom'
 import './ProductDetail.css';
 
 
-/** */
+/**
+* takes url param as id key in inventory
+*/
 function ProductDetail() {
+  const { id } = useParams()
+  const item = useSelector( store => store.inventory[id])
 
   return (
     <div className="ProductDetail">
-      <img src="https://thumbs.dreamstime.com/z/sailor-lorem-ipsum-tattoo-hand-pop-art-retro-comic-book-vector-illustration-89960804.jpg"
-        alt="lorem ipsum tatto" />
-      <h1>name</h1>
-      <p>description</p>
-      <p>price</p>
+      <img src={`${item.price}`}
+        alt={`${item.name}`} />
+      <h1>{item.name}</h1>
+      <p>{item.description}</p>
+      <p>${item.price}</p>
     </div>
   );
 }
