@@ -9,7 +9,13 @@ import Logo from '../images/bunny-ears.png';
 function Navigation() {
   const cartContents = useSelector(store => store.cartContents, shallowEqual); //obj
 
-  const calcCartCount = (cart) => Object.values(cart).reduce( (a,b) => a + b)
+  function calcCartCount(cart) {
+    let total = 0
+    if (Object.keys(cart).length > 0) {
+      total = Object.values(cart).reduce((a, b) => a + b)
+    }
+    return total
+  }
 
   return (
     <div className="Navigation">
@@ -20,7 +26,7 @@ function Navigation() {
 
       <div className="cart icon">
         <Link to="/cart">
-          <i class="fas fa-shopping-cart">
+          <i className="fas fa-shopping-cart">
             Cart ({calcCartCount(cartContents)})
           </i>
         </Link>

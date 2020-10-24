@@ -7,21 +7,28 @@ import DiscountForm from './DiscountForm'
 // cartContents: {undefined: 1}... so i'm not grabbing id?
 /** */
 function ShoppingCart() {
-  // const [discountCode, setDiscountCode] = useState("");
   const [cartItems, setCartItems] = useState({});
   const { cartContents, inventory } = useSelector(store => store, shallowEqual)
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    function updateCart(){
+    function updateCart() {
       setCartItems(cartContents)
+      const subTotal = (x) => inventory[x].price * cartItems[x]
+      let cartKeys = Object.keys(cartItems)
+
+      let cTotal = cartKeys.length > 0
+        ? cartKeys.reduce((a, b) => a + parseInt(subTotal(b)), 0)
+        : 0
+
+      setTotal(cTotal)
     }
     updateCart()
-    }, [cartContents])
+    }, [cartContents, cartItems, inventory])
 
   const cartRows =
     Object.keys(cartItems).map(id => (
-        <tr>
+      <tr key={id}>
         <td>{inventory[id].name}</td>
         <td>{inventory[id].price}</td>
         <td>{cartItems[id]}</td>
@@ -30,20 +37,6 @@ function ShoppingCart() {
       </tr>
     ))
 
-  function calcTotal(cart) {
-    let cTotal = 0
-    //
-    setTotal(cTotal)
-  }
-
-  // const handleChange = evt => {
-  //   setDiscountCode(evt.target.value);
-  // };
-
-  // const handleSubmit = (evt) => {
-  //   evt.preventDefault();
-  //   setDiscountCode("")
-  // }
 
   // use state.cartContents as data
   return (
@@ -66,17 +59,6 @@ function ShoppingCart() {
 
       <p>Total: ${total}</p>
       <DiscountForm />
-      {/* <form onSubmit={handleSubmit}>
-        <label htmlFor="discoutCode">Discount:</label>
-        <input type="text"
-          name="discountCode"
-          value={discountCode}
-          placeholder=""
-          onChange={handleChange}
-        ></input>
-        <button>Apply Discount</button>
-      </form> */}
-
     </div>
   );
 }

@@ -5,7 +5,7 @@ import {
 import data from "../data.json";
 
 const INITIAL_STATE = {
-  cartContents: {"47314fa1-ae56-4eae-80be-af6691145951": 2}, // {product: count,...}
+  cartContents: {}, // {product: count,...}
   inventory: data.products,
 };
 
@@ -17,7 +17,6 @@ function reducer(state = INITIAL_STATE, action) {
     case ADD_TO_CART: {
       const cartCopy = { ...state.cartContents };
       cartCopy[action.id] = (cartCopy[action.id] || 0) + 1; // value @ cartCopy key "action.id" is now created or incremented
-      console.log(`\n\n\n The value of newCart is `, { ...state, cartContents: cartCopy, });
       return { ...state, cartContents: cartCopy, }
     }
 
@@ -29,7 +28,6 @@ function reducer(state = INITIAL_STATE, action) {
       if (cartCopy[action.id] === 0) {
         delete cartCopy[action.id]; // decrement count or remove if count == 1, why show if decrementing makes it 0?
       }
-      console.log(`\n\n\n The value of newCart is `, { ...state, cartContents: cartCopy, });
       return { ...state, cartContents: cartCopy, }
 
     }
